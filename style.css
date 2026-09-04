@@ -1,0 +1,236 @@
+/*
+ * Prompt Modules styling.
+ *
+ * Collapsing is done by hiding member rows in place. The rows stay in the DOM and
+ * keep the `completion_prompt_manager_prompt_draggable` class, which is what makes
+ * the collapse safe for prompt_order.
+ */
+
+.pm-collapsed-member {
+    display: none !important;
+}
+
+/* The in/out control on each prompt row. Kept quiet until you hover the row, so a
+   long prompt list does not turn into a wall of competing icons. */
+.pm-member-toggle {
+    cursor: pointer;
+    opacity: 0;
+    margin-left: 6px;
+    padding: 0 2px;
+    transition: opacity 0.15s ease;
+}
+
+li.completion_prompt_manager_prompt:hover .pm-member-toggle,
+.pm-member-toggle:focus {
+    opacity: 0.55;
+}
+
+.pm-member-toggle:hover {
+    opacity: 1 !important;
+}
+
+/* Members read as attached to their module. */
+li.completion_prompt_manager_prompt[data-pm-module] .pm-member-toggle {
+    opacity: 0.35;
+}
+
+li.completion_prompt_manager_prompt[data-pm-module] {
+    border-left: 2px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Header rows -------------------------------------------------------------- */
+
+li.completion_prompt_manager_prompt.pm-header {
+    background-color: rgba(255, 255, 255, 0.04);
+    border-radius: 4px;
+}
+
+.pm-toggle {
+    cursor: pointer;
+    opacity: 0.75;
+    margin-right: 2px;
+    transition: opacity 0.15s ease;
+}
+
+.pm-toggle:hover {
+    opacity: 1;
+}
+
+.pm-badge {
+    opacity: 0.6;
+    font-size: 0.8em;
+    margin-left: 6px;
+    padding: 0 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.pm-actions {
+    cursor: pointer;
+    opacity: 0;
+    margin-left: 6px;
+    padding: 0 3px;
+    transition: opacity 0.15s ease;
+}
+
+li.pm-header:hover .pm-actions,
+.pm-actions:focus {
+    opacity: 0.8;
+}
+
+.pm-actions:hover {
+    opacity: 1 !important;
+}
+
+/* Floating module menu ------------------------------------------------------ */
+
+.pm-menu {
+    position: fixed;
+    z-index: 10000;
+    min-width: 230px;
+    padding: 4px;
+    border: 1px solid var(--SmartThemeBorderColor, rgba(255, 255, 255, 0.2));
+    border-radius: 6px;
+    background-color: var(--SmartThemeBlurTintColor, #1c1c1c);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+}
+
+.pm-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.pm-menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.pm-menu-separator {
+    height: 1px;
+    margin: 4px 2px;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Dialogs ------------------------------------------------------------------ */
+
+.pm-dialog {
+    text-align: left;
+}
+
+.pm-dialog-title {
+    margin: 0 0 8px;
+}
+
+.pm-summary-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 2px 0;
+}
+
+.pm-summary-row b {
+    margin-left: auto;
+}
+
+.pm-summary-row small {
+    opacity: 0.6;
+    flex-basis: 100%;
+    text-align: right;
+}
+
+.pm-block {
+    margin-top: 8px;
+}
+
+.pm-block > label {
+    display: block;
+    opacity: 0.7;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.pm-list {
+    max-height: 160px;
+    overflow-y: auto;
+    margin: 2px 0 0;
+    padding-left: 20px;
+}
+
+.pm-options {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.pm-danger {
+    color: var(--warning, #e0776a);
+}
+
+.pm-muted {
+    opacity: 0.65;
+}
+
+.pm-footnote {
+    display: block;
+    margin-top: 10px;
+}
+
+/* Library ------------------------------------------------------------------ */
+
+.pm-library {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin: 4px 0;
+}
+
+.pm-library-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 6px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pm-library-row:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.pm-library-name {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pm-library-action {
+    opacity: 0.65;
+    padding: 2px 4px;
+    cursor: pointer;
+}
+
+.pm-library-action:hover {
+    opacity: 1;
+}
+
+/* Everything below the master switch is meaningless while modules are off. */
+.pm-disabled {
+    opacity: 0.4;
+    pointer-events: none;
+    filter: grayscale(0.6);
+}
+
+.pm-panel-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 8px;
+}

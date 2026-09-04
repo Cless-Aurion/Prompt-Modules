@@ -1,0 +1,12 @@
+# Normalize to LF in the repository and in working copies on every platform.
+* text=auto eol=lf
+
+# Images are binary: never eol-convert or diff them as text.
+*.jpg  binary
+*.jpeg binary
+*.png  binary
+*.gif  binary
+*.webp binary
+*.ico  binary
+*.bmp  binary
+*.avif binary

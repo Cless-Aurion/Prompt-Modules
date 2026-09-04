@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+
+# Logs and crash output
+*.log
+npm-debug.log*
+
+# Secrets and credentials — never commit these.
+# .env.example is allowed so the expected variable names can be documented.
+.env
+.env.*
+!.env.example
+
+# Private keys and certificates
+*.pem
+*.key
+*.p12
+*.pfx
+*.cer
+*.crt
+*.der
+*.keystore
+*.jks
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+
+# Editor / IDE local state (per-machine, not project config)
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local test fixtures. The suite accepts `--preset <path>`; real presets contain
+# personal prompt text and must stay out of the repo.
+fixtures/
+*.preset.json
+*.private.json
+test-presets/
+
+# Prompt modules exported from a live install, plus SillyTavern data/backups that
+# may be copied in while debugging.
+exports/
+*.module.json
+settings.json
+backups/

@@ -1,0 +1,12 @@
+{
+    "display_name": "Prompt Modules",
+    "loading_order": 100,
+    "requires": [],
+    "optional": [],
+    "js": "index.js",
+    "css": "style.css",
+    "author": "Cless-Aurion",
+    "version": "0.1.0",
+    "homePage": "https://github.com/Cless-Aurion/Prompt-Modules",
+    "minimum_client_version": "1.18.0"
+}
